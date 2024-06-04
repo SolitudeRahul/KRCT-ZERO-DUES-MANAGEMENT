@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('images/bg-02.png'); /* Add your background image path */
+        background-size: cover;
+    }
+    .login-box {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity */
+    }
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .login-box input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .login-logo {
+        margin-bottom: 20px;
+    }
+    .login-message {
+        margin-top: 20px;
+        font-style: italic;
+        color: #888;
+    }
+    .footer {
+        margin-top: 20px;
+        color: #888;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 90%;
+    }
+</style>
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+</head>
+<body>
+    <div class="login-box">
+        <img class="login-logo" src="images/KRCT_LOGO.jpeg" alt="Logo">
+        <form action="login.php" method="POST" onsubmit="return validateForm()">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div class="container">
+            <a class="button" href="create_user.php">Create User</a>
+        </div>
+        <div class="container">
+            <a class="button" href="change_password.php">Change password</a>
+        </div>
+        <p class="login-message">KRCT Zero due Login</p>
+        <div class="footer">
+            <center>&copy; <span id="year">2024</span> | Developed by SASIKANTH U | KRCT</center>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function validateForm() {
+        var username = document.getElementsByName("username")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+
+        if (username.trim() === "") {
+            alert("Please enter your username.");
+            return false;
+        }
+
+        if (password.trim() === "") {
+            alert("Please enter your password.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
